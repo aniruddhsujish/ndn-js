@@ -45478,7 +45478,7 @@ Tlv0_2WireFormat.prototype.encodeInterest = function(interest)
     Tlv0_2WireFormat.didCanBePrefixWarning_ = true;
   }
 
-  if (interest.hasApplicationParameters())
+  /*if (interest.hasApplicationParameters())
     // The application has specified a format v0.3 field. As we transition to
     // format v0.3, encode as format v0.3 even though the application default is
     // Tlv0_2WireFormat.
@@ -45550,7 +45550,8 @@ Tlv0_2WireFormat.prototype.encodeInterest = function(interest)
 
   return { encoding: new Blob(encoder.getOutput(), false),
            signedPortionBeginOffset: signedPortionBeginOffset,
-           signedPortionEndOffset: signedPortionEndOffset };
+           signedPortionEndOffset: signedPortionEndOffset };*/
+    return Tlv0_2WireFormat.encodeInterestV03_(interest);
 };
 
 /**
